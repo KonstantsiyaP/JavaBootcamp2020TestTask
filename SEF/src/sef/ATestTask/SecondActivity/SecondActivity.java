@@ -1,4 +1,7 @@
 package sef.ATestTask.SecondActivity;
+
+import static com.sun.javafx.fxml.expression.Expression.*;
+
 // Complete Code
 public class SecondActivity {
 
@@ -12,8 +15,9 @@ public class SecondActivity {
 		//calculator.divide(100, 33);
 		// and more
 
+
+		//TODO create the Calculator (here or in additional class)
+
+
 	}
 
-	//TODO create the Calculator (here or in additional class)
-
-}

@@ -3,6 +3,9 @@ package sef.ATestTask.FirstActivity;
 
 public class Person {
 
+		private String firstName;
+		private String secondName;
+		private int age;
 //TODO 1 Implement Person Attributes
 
 	//Behavior - default constructor
@@ -48,7 +51,8 @@ public class Person {
 
 	//TODO 2 add all person info into announce() method
 	public String announce() {
-		return "I am " + getFirstName() + " " + getSecondName();
+		return "My name is "+firstName +" "+secondName+" and i am "+age+" years old";
 	}
+system.out.println ()
 }
 

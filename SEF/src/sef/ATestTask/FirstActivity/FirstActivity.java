@@ -1,27 +1,74 @@
 package sef.ATestTask.FirstActivity;
 
-public class FirstActivity {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-	public static void main(String[] args) {
+public class FirstActivity extends Employee {
 
-		//TODO 1 Create collection of employee (more than 5) list or map
-		//		System.out.println() result
+    public static void main(String[] args) {
 
-		//TODO 2 sort and this employees by salary (from min to max)
-		// TIP - google bubble sort
-		//		System.out.println() result
+        //TODO 1 Create collection of employee (more than 5) list or map
+        //		System.out.println() result
+        Employee employee1 = new Employee("John", "Snow", 25, 01, "Tester", "Snowwhite", 1000);
+        Employee employee2 = new Employee("Dina", "Peppa", 29, 02, "Assistant", "Rosenrot", 1500);
+        Employee employee3 = new Employee("Peter", "Heppner", 50, 03, "Musician", "Wolfsheim", 9000);
+        Employee employee4 = new Employee("Till", "Lindemann", 57, 04, "Singer", "Rammstein", 3600);
+        Employee employee5 = new Employee("Steve", "Hewitt", 52, 05, "Drummer", "Placebo", 2800);
+        Employee employee6 = new Employee("Martin", "Gore", 60, 06, "Composer", "DepecheMode", 3400);
+        List<Employee> employees = new ArrayList<>();
+        employees.add(employee1);
+        employees.add(employee2);
+        employees.add(employee3);
+        employees.add(employee4);
+        employees.add(employee5);
+        employees.add(employee6);
 
-		//TODO 3 create instance of a Student as a Person ->
-		// than ask him introduce()
-		// than make them Student
-		// than ask him introduce()
+        for (Employee employee : employees) {
+            System.out.println("First name:" + employee.getFirstName() + " Second name:" + employee.getSecondName() + " Age:" + employee.getAge() + " Id:" + employee.getEmpId() + " Job:" + employee.getJobTitle() + " Company:" + employee.getCompanyName() + " Salary:" + employee.getSalary());
+        }
+        //TODO 2 sort and this employees by salary (from min to max)
+        // TIP - google bubble sort
+        //		System.out.println() result
 
-		//TODO 4 Create method for full change of employee information
-		// for example some employee change his work
+        Comparator<Employee> EmpSalary = new Comparator<Employee>() {
+
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                double sal1 = o1.getSalary();
+                double sal2 = o2.getSalary();
+
+                return (int) (sal1 - sal2);
+            }
+
+        };
+        Collections.sort(employees, EmpSalary);
+        for (Employee employee : employees) {
+            System.out.println("First name:" + employee.getFirstName() + " Second name:" + employee.getSecondName() + " Age:" + employee.getAge() + " Id:" + employee.getEmpId() + " Job:" + employee.getJobTitle() + " Company:" + employee.getCompanyName() + " Salary:" + employee.getSalary());
+        }
 
 
-	}
+        //TODO 3 Create instance of a student as a person ->
+        // than ask him introduce()
+        // than make them Student
+        // than ask him introduce()
+        Student s = new Student();
+        s.setFirstName("Leo");
+        s.setSecondName("Ololeo");
+        s.setAge(99);
 
-	
-	
+
+        Person tempPerson = s;
+        tempPerson.announce();
+        Student tempStudent = (Student) tempPerson;
+        tempStudent.announce();
+
+        //TODO 4 Create method for full change of employee information
+        // for example some employee change his work
+
+
+    }
+
+
 }
