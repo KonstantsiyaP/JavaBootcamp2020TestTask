@@ -53,6 +53,5 @@ public class Person {
 	public String announce() {
 		return "My name is "+firstName +" "+secondName+" and i am "+age+" years old";
 	}
-system.out.println ()
 }
 

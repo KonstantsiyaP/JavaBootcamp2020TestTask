@@ -8,7 +8,12 @@ public class ThirdActivity {
     public static void main(String[] args) {
         ThirdActivity ta = new ThirdActivity();
         //TODO handle exception on proper way
-        ta.validateUser("Ivan");
+        try {
+            ta.validateUser("Ivan");
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
         ta.catchExeption();
     }
 
@@ -19,15 +24,17 @@ public class ThirdActivity {
             for (int i = 0; i <= 10; i++) {
                 System.out.println(arr[i]);
             }
-        } catch (IndexOutOfBoundsException e) {System.out.println(e.toString());}
-
-           finally { System.out.println("This should get printed even if there is an exception");}
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.toString());
+        } finally {
+            System.out.println("This should get printed even if there is an exception");
+        }
 
 
     }
     //TODO if name in a list -> set flag=true
     // if at the end flag=0 -> throw the exeption
-    void validateUser(String name) throws CustomExceptionActivity {
+    public void validateUser(String name) throws CustomExceptionActivity {
         String[] validUsers = {"John", "Mike", "Missi", "Peacy"};
         boolean flag = false;
         for (int i = 0; i < 4; i++) {
@@ -37,7 +44,9 @@ public class ThirdActivity {
             }
 
         }
-        if (flag==false) {throw new CustomExceptionActivity();}
+        if (flag == false) {
+            throw new CustomExceptionActivity();
+        }
 
 
     }

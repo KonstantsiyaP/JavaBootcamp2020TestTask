@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class SecondActivityTest extends TestCase {
 
-
 	//TODO try to achieve 100% of test coverage
 
 	private SecondActivity theCalculator;
@@ -23,15 +22,25 @@ public class SecondActivityTest extends TestCase {
 	//Example ->
 	@Test
 	public void testGetSumPositiveValue() {
-		assertEquals(15, (theCalculator.getSum(5, 10)));
-		assertEquals(15, (theCalculator.getSum(10, 5)));
+		assertEquals(15, (int) theCalculator.sum(5, 10));
+		assertEquals(15, (int) theCalculator.sum(10, 5));
 	}
 
 	//Example ->
 	@Test
 	public void testGetSumNegativeValue() {
-		assertEquals(5, (theCalculator.getSum(-5, 10)));
-		assertEquals(-5, (theCalculator.getSum(5, -10)));
+		assertEquals(5, (int) theCalculator.sum(-5, 10));
+		assertEquals(-5, (int) theCalculator.sum(5, -10));
+	}
+
+	@Test
+	public void testGDiv() {
+		assertEquals(0, (int) theCalculator.divide(0, 10));
+	}
+
+	@Test
+	public void testGDivToZero() {
+		assertEquals(0, (int) theCalculator.divide(0, 0));
 	}
 
 }

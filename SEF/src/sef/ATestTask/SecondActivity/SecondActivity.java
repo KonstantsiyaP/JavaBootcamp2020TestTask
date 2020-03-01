@@ -1,6 +1,5 @@
 package sef.ATestTask.SecondActivity;
 
-import static com.sun.javafx.fxml.expression.Expression.*;
 
 // Complete Code
 public class SecondActivity {
@@ -11,8 +10,8 @@ public class SecondActivity {
 
 		//TODO Use the calculator to calculate different values
 		//Example ->
-		//calculator.sum(10.2, 5);
-		//calculator.divide(100, 33);
+		Double sum = calculator.sum(10.2, 5);
+		Double divide= calculator.divide(100, 33);
 		// and more
 
 
@@ -20,4 +19,16 @@ public class SecondActivity {
 
 
 	}
+
+	public double divide(int i, int i1) {
+		if(i1==0){
+			return 0;
+		}
+		return 1/i1;
+	}
+
+	public double sum(double v, int i) {
+		return v+i;
+	}
+}
 

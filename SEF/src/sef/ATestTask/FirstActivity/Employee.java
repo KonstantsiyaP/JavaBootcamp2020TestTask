@@ -1,11 +1,12 @@
 package sef.ATestTask.FirstActivity;
 
-public class Employee extends Person {
+public class Employee extends Person implements Humanity{
 
     private int empId;
     private String jobTitle;
     private String companyName;
     private double salary;
+    private String nationality;
 
 
     //TODO 1 create different constructors
@@ -46,7 +47,7 @@ public class Employee extends Person {
         return companyName;
     }
 
-    public void getCompanyName(String companyName) {
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
@@ -54,7 +55,7 @@ public class Employee extends Person {
         return salary;
     }
 
-    public void getSalary(double salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -65,4 +66,12 @@ public class Employee extends Person {
         return personAnnounce +"I work as" +jobTitle+ "in" +companyName;
     }
 
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    @Override
+    public String getNationality() {
+        return this.nationality;
+    }
 }
